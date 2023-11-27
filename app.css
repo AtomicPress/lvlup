@@ -80,7 +80,7 @@ header input:focus{
     background: #656266;
 }
 /* //Usejavascript */
-.userpanel:focus, .notifbtn:focus{
+.userpanel:focus-visible, .notifbtn:focus-visible{
     background: #656266;
     box-shadow: 0px 0px 0px 3px #005BD3;
 }
@@ -175,7 +175,7 @@ header input:focus{
 .panel ul li:active, .alerts:active{
     background: #F0F0F0;
 }
-.panel ul li:focus, .alerts:active,  .notification i:focus{
+.panel ul li:focus-visible, .alerts:active,  .notification i:focus-visible{
     background: #FFFFFF;
     border: 1px inset #FFFFFF;
     box-shadow: 0px 0px 0px 2px #005BD3;
@@ -296,6 +296,7 @@ header input:focus{
     box-shadow: 0px 1px 0px 0px #0000000D;
     position: relative;
     background: #FFFFFF;
+    transition: height .5s linear;
     animation: fade-in .2s linear;
 }
 input[type=checkbox]:hover{
@@ -468,8 +469,8 @@ input[type=checkbox]:checked{
     }
 }
 .dropdowns i:focus-within{
-    border-radius: 10px;
-    border:2px solid  #005BD3;
+    border-radius: 5px;
+    box-shadow:  0 0 1px  #005BD3;
 }
 progress:focus{
     border-radius: 6px;

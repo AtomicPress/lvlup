@@ -118,7 +118,4 @@ window.addEventListener('keyup', function(e){
     if(e.key === 'Escape'){
     curEl ? curEl.ariaHidden = true :  '';
     }
-    // if(togDropBtn.onfocus()){
-    //     console.log('focused')
-    // }
 })
