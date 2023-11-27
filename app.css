@@ -70,8 +70,10 @@ header input:focus{
     align-items: center;
     justify-content: space-evenly;
     border-radius: 8px;
-    cursor: pointer;
     font-family: Inter;
+}
+.userdiv{
+    cursor: pointer;
 }
 .userpanel .userdiv:hover, .userpanel .notifbtn:hover{
     background: #616161;
@@ -79,8 +81,7 @@ header input:focus{
 .userpanel .userdiv.active, .userpanel .notifbtn.active{
     background: #656266;
 }
-/* //Usejavascript */
-.userpanel:focus-visible, .notifbtn:focus-visible{
+.userdiv:focus-visible, .notifbtn:focus-visible{
     background: #656266;
     box-shadow: 0px 0px 0px 3px #005BD3;
 }
