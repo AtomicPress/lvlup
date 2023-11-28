@@ -300,8 +300,11 @@ header input:focus{
     transition: height .5s linear;
     animation: fade-in .2s linear;
 }
-input[type=checkbox]:hover{
-    border: solid #8A8A8A;
+input[type=checkbox]:hover + .dashed circle{
+    stroke-dasharray: 1;
+}
+i .dashed{
+    z-index: 0;
 }
 input[type=checkbox]:active{
     opacity: 0;
@@ -437,18 +440,28 @@ input[type=checkbox]{
     appearance: none;
     cursor: pointer;
     accent-color: #000000;
-    z-index: 5;
-    transition: opacity .25s;
-}
-input[type=checkbox]:checked{
-    appearance: auto;
-    clip-path: circle(50% at 50% 50%);
+    z-index: 15;
+    position: relative;
+    opacity: 0;
 }
 .dropdownimg:focus{
     border: solid 2px #005BD3;
 }
 .dropdowns i[role=checkbox]{
     position: relative;
+}
+.dropdowns i[role=checkbox] svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.checkedsvg{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
 }
 .checksvg{
     position: absolute;
@@ -471,7 +484,7 @@ input[type=checkbox]:checked{
 }
 .dropdowns i:focus-within{
     border-radius: 5px;
-    box-shadow:  0 0 1px  #005BD3;
+    box-shadow:  0 0 2px  #005BD3;
 }
 progress:focus{
     border-radius: 6px;

@@ -80,23 +80,27 @@ function progres(){
 allCheckbox.forEach(checks=>{
     let parEl = checks.parentElement.parentElement.parentElement,
     nextEl =parEl.nextElementSibling,
-    eldr = parEl.querySelector('.dropdowncontent');
-    checks.addEventListener('click', function(){
-        checks.style.opacity = 0
-    });
+    eldr = parEl.querySelector('.dropdowncontent'),
+    dashed  = parEl.querySelector('.dashed'),
+    checkSvg = parEl.querySelector('.checksvg'),
+    checkedSvg = parEl.querySelector('.checkedsvg');
     checks.addEventListener('change', function(){
-        checks.style.opacity = 0
-        checks.nextElementSibling.classList.add('spin')
+        checkSvg.classList.add('spin');
+        checkedSvg.style.display = 'none'
+        dashed.ariaHidden = true
         setTimeout(() => {
-            checks.nextElementSibling.classList.remove('spin');
-            checks.style.opacity = 1
+            checkSvg.classList.remove('spin');
             progres()
             if(checks.checked){
+            checkedSvg.style.display = 'block';
             parEl.classList.remove('active');
             nextEl?.classList.add('active');
             eldr.ariaHidden = true;
             nextEl  ? nextEl.querySelector('.dropdowncontent').ariaHidden = false : '';
-        }  
+        }else{
+            checkedSvg.style.display = 'none'
+            dashed.ariaHidden = '';
+        } 
         }, 1200);
     })
 })
